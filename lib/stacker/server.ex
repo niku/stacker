@@ -1,6 +1,10 @@
 defmodule Stacker.Server do
   use GenServer.Behaviour
 
+  def start_link(stack) do
+    :gen_server.start_link({ :local, :stacker }, __MODULE__, stack, [])
+  end
+
   def init(stack) do
     { :ok, stack }
   end
