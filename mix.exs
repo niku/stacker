@@ -10,7 +10,10 @@ defmodule Stacker.Mixfile do
 
   # Configuration for the OTP application
   def application do
-    []
+    [
+     registered: [:stacker],
+     mod: { Stacker, [:hello] }
+    ]
   end
 
   # Returns the list of dependencies in the format:
